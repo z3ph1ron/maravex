@@ -13,7 +13,7 @@ const refreshCookieOptions = {
   secure: env.NODE_ENV === "production",
   sameSite: "lax",
   maxAge: 7 * 24 * 60 * 60 * 1000,
-  path: "/auth/refresh-token",
+  path: "/auth/refresh",
 };
 
 const setAuthCookies = (res, accessToken, refreshToken) => {
@@ -23,7 +23,7 @@ const setAuthCookies = (res, accessToken, refreshToken) => {
 
 const clearAuthCookies = (res) => {
   res.clearCookie("maravex_at", { path: "/" });
-  res.clearCookie("maravex_rt", { path: "/auth/refresh-token" });
+  res.clearCookie("maravex_rt", { path: "/auth/refresh" });
 };
 
 export {
